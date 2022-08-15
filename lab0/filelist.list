@@ -1,0 +1,5 @@
+//dut list
+./mux_2to1_cond.v
+
+//tb list
+./mux_2to1_cond_tb.v
