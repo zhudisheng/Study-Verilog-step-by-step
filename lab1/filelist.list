@@ -1,0 +1,5 @@
+//dut list
+./decoder3_8.v
+
+//tb list
+./decoder3_8_tb.v
