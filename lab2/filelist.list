@@ -1,0 +1,5 @@
+//dut list
+./counter.v
+
+//tb list
+./counter_tb.v
