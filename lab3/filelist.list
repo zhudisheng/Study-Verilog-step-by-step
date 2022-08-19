@@ -1,0 +1,5 @@
+//dut list
+./BCD_Counter.v
+
+//tb list
+./BCD_Counter_tb.v
