@@ -1,0 +1,19 @@
+module my_checker(
+	input clk,
+	input rstp,
+	input [3:0] count,
+	input [3:0] count_checker);
+
+//sequence counter;
+//	cntr_resetH == 1;
+//endsequence
+
+property count_compare;
+	@(negedge clk) !rstp |-> (count == count_checker);
+endproperty
+
+//Assert the property
+a3: assert property(count_compare);
+endmodule
+
+bind test_fifo my_checker mychk(clk,rstp,test_fifo.U1.count,count_checker);

@@ -1,0 +1,1 @@
+ vcs -sverilog -cm assert -debug -assert dve -f run1sva.f
