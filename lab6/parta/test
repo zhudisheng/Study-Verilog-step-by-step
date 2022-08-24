@@ -1,0 +1,4 @@
+$fopenr  check=fopen_check   call=fopen_call   misc=fopen_misc  size=32 data=2 acc=rw:%TASK
+$fread   check=fread_check   call=fread_call                    size=32 acc=rw:*
+$fcloser check=fclose_check  call=fclose_call                   size=32 data=2
+$feof    check=feof_check    call=feof_call                     size=32

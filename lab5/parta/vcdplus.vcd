@@ -1,0 +1,383 @@
+$timescale
+ 1ns
+$end
+
+$scope module addertb $end
+$var reg        8 "    a_test [7:0] $end
+$var reg        8 #    b_test [7:0] $end
+$var wire       8 $    sum_test [7:0] $end
+$var reg        1 %    cin_test $end
+$var wire       1 &    cout_test $end
+$var reg       18 '    test [17:0] $end
+$var integer   32 (    error_count $end
+
+$scope module u1 $end
+$var wire       8 )    a [7:0] $end
+$var wire       8 *    b [7:0] $end
+$var wire       1 +    cin $end
+$var wire       1 &    cout $end
+$var wire       8 $    sum [7:0] $end
+$var wire       1 ,    c4 $end
+$var wire       1 -    c8_0 $end
+$var wire       1 .    c8_1 $end
+$var wire       1 /    zero_add_cin $end
+$var wire       1 0    one_add_cin $end
+$var wire       4 1    sum_0 [7:4] $end
+$var wire       4 2    sum_1 [7:4] $end
+
+$scope module u1 $end
+$var wire       4 3    a [3:0] $end
+$var wire       4 4    b [3:0] $end
+$var wire       1 +    cin $end
+$var wire       1 ,    cout $end
+$var wire       4 5    sum [3:0] $end
+$var wire       3 6    c [3:1] $end
+
+$scope module u1 $end
+$var wire       1 7    a $end
+$var wire       1 8    b $end
+$var wire       1 +    cin $end
+$var wire       1 9    sum $end
+$var wire       1 :    cout $end
+$upscope $end
+
+$scope module u2 $end
+$var wire       1 ;    a $end
+$var wire       1 <    b $end
+$var wire       1 :    cin $end
+$var wire       1 =    sum $end
+$var wire       1 >    cout $end
+$upscope $end
+
+$scope module u3 $end
+$var wire       1 ?    a $end
+$var wire       1 @    b $end
+$var wire       1 >    cin $end
+$var wire       1 A    sum $end
+$var wire       1 B    cout $end
+$upscope $end
+
+$scope module u4 $end
+$var wire       1 C    a $end
+$var wire       1 D    b $end
+$var wire       1 B    cin $end
+$var wire       1 E    sum $end
+$var wire       1 ,    cout $end
+$upscope $end
+$upscope $end
+
+$scope module zero_add $end
+$var wire       4 F    a [3:0] $end
+$var wire       4 G    b [3:0] $end
+$var wire       1 /    cin $end
+$var wire       1 -    cout $end
+$var wire       4 1    sum [3:0] $end
+$var wire       3 H    c [3:1] $end
+
+$scope module u1 $end
+$var wire       1 I    a $end
+$var wire       1 J    b $end
+$var wire       1 /    cin $end
+$var wire       1 K    sum $end
+$var wire       1 L    cout $end
+$upscope $end
+
+$scope module u2 $end
+$var wire       1 M    a $end
+$var wire       1 N    b $end
+$var wire       1 L    cin $end
+$var wire       1 O    sum $end
+$var wire       1 P    cout $end
+$upscope $end
+
+$scope module u3 $end
+$var wire       1 Q    a $end
+$var wire       1 R    b $end
+$var wire       1 P    cin $end
+$var wire       1 S    sum $end
+$var wire       1 T    cout $end
+$upscope $end
+
+$scope module u4 $end
+$var wire       1 U    a $end
+$var wire       1 V    b $end
+$var wire       1 T    cin $end
+$var wire       1 W    sum $end
+$var wire       1 -    cout $end
+$upscope $end
+$upscope $end
+
+$scope module one_add $end
+$var wire       4 F    a [3:0] $end
+$var wire       4 G    b [3:0] $end
+$var wire       1 0    cin $end
+$var wire       1 .    cout $end
+$var wire       4 2    sum [3:0] $end
+$var wire       3 X    c [3:1] $end
+
+$scope module u1 $end
+$var wire       1 I    a $end
+$var wire       1 J    b $end
+$var wire       1 0    cin $end
+$var wire       1 Y    sum $end
+$var wire       1 Z    cout $end
+$upscope $end
+
+$scope module u2 $end
+$var wire       1 M    a $end
+$var wire       1 N    b $end
+$var wire       1 Z    cin $end
+$var wire       1 [    sum $end
+$var wire       1 \    cout $end
+$upscope $end
+
+$scope module u3 $end
+$var wire       1 Q    a $end
+$var wire       1 R    b $end
+$var wire       1 \    cin $end
+$var wire       1 ]    sum $end
+$var wire       1 ^    cout $end
+$upscope $end
+
+$scope module u4 $end
+$var wire       1 U    a $end
+$var wire       1 V    b $end
+$var wire       1 ^    cin $end
+$var wire       1 _    sum $end
+$var wire       1 .    cout $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0W
+0L
+0A
+b000 6
+0+
+b000 X
+0M
+0B
+07
+0,
+0-
+b00000000 "
+1Y
+0N
+0C
+08
+0.
+b00000000 #
+0Z
+0O
+0D
+09
+0:
+0/
+b00000000 $
+0[
+0P
+0E
+0;
+10
+0%
+0\
+0Q
+b0000 F
+b0000 G
+0<
+b0000 1
+0&
+0]
+0R
+b000 H
+0=
+b0001 2
+b000000000000000000 '
+0^
+0S
+0T
+0I
+0>
+b0000 3
+b00000000000000000000000000000001 (
+0_
+0U
+0J
+0?
+b0000 4
+b00000000 )
+0V
+0K
+0@
+b0000 5
+b00000000 *
+$end
+#50
+b000000000000000001 '
+b00000001 #
+b00000001 *
+b0001 4
+18
+b00000000000000000000000000000010 (
+b00000001 $
+b0001 5
+19
+#100
+b000000000000000010 '
+b00000010 #
+b00000010 *
+b0010 4
+08
+1<
+b00000000000000000000000000000011 (
+b00000010 $
+b0010 5
+09
+1=
+#150
+b000000000000000011 '
+b00000011 #
+b00000011 *
+b0011 4
+18
+b00000000000000000000000000000100 (
+b00000011 $
+b0011 5
+19
+#200
+b000000000000000100 '
+b00000100 #
+b00000100 *
+b0100 4
+08
+0<
+1@
+b00000000000000000000000000000101 (
+b00000100 $
+b0100 5
+09
+0=
+1A
+#250
+b000000000000000101 '
+b00000101 #
+b00000101 *
+b0101 4
+18
+b00000000000000000000000000000110 (
+b00000101 $
+b0101 5
+19
+#300
+b000000000000000110 '
+b00000110 #
+b00000110 *
+b0110 4
+08
+1<
+b00000000000000000000000000000111 (
+b00000110 $
+b0110 5
+09
+1=
+#350
+b000000000000000111 '
+b00000111 #
+b00000111 *
+b0111 4
+18
+b00000000000000000000000000001000 (
+b00000111 $
+b0111 5
+19
+#400
+b000000000000001000 '
+b00001000 #
+b00001000 *
+b1000 4
+08
+0<
+0@
+1D
+b00000000000000000000000000001001 (
+b00001000 $
+b1000 5
+09
+0=
+0A
+1E
+#450
+b000000000000001001 '
+b00001001 #
+b00001001 *
+b1001 4
+18
+b00000000000000000000000000001010 (
+$dumpoff
+bx (
+x8
+bx 4
+bx *
+bx #
+bx '
+xE
+xA
+x=
+x9
+bx 5
+bx $
+xD
+x@
+x<
+xK
+xV
+bx )
+x?
+xJ
+xU
+x_
+bx 3
+x>
+xI
+xT
+xS
+x^
+bx 2
+bx H
+xR
+x]
+x&
+bx 1
+bx G
+bx F
+xQ
+x\
+x%
+x0
+x;
+xP
+x[
+x/
+x:
+xO
+xZ
+x.
+xC
+xN
+xY
+bx "
+x-
+x,
+x7
+xB
+xM
+bx X
+x+
+bx 6
+xL
+xW
+$end
+#6553600

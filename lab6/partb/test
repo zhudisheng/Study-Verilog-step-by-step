@@ -1,0 +1,63 @@
+abcdaefgabhijabcklmabcdnoabcprabstauabvabcxabcd
+//--------------------------------------------------------------------------------
+//                                 Codec Module
+//--------------------------------------------------------------------------------
+
+module codec(clk, rstN, file_in, ldN, din, ldN_out, data, coder_busy);
+
+input [7:0] din;
+output [7:0] data;
+input clk, rstN, file_in, ldN;
+output ldN_out, coder_busy;
+
+wire file_code, ldN_code, decoder_busy;
+wire [8:0] code;
+
+coder coder(.clk(clk), .rstN(rstN), .file_in(file_in), .ldN(ldN), .din(din),
+            .coder_busy(coder_busy), .file_code(file_code), .ldN_code(ldN_code),
+            .code(code), .decoder_busy(decoder_busy));
+            
+decoder decoder(.clk(clk), .rstN(rstN), .file_code(file_code),
+                .ldN_code(ldN_code), .code(code), .decoder_busy(decoder_busy),
+                .ldN_out(ldN_out), .data(data));
+
+endmodule
+
+//--------------------------------------------------------------------------------
+//                                 Coder Module
+//--------------------------------------------------------------------------------
+
+module coder(clk, rstN, file_in, ldN, din, coder_busy, file_code, ldN_code, code,
+             decoder_busy);
+
+input [7:0] din;
+input clk, rstN, file_in, ldN, decoder_busy;
+output [8:0] code;
+output file_code, ldN_code, coder_busy;
+
+reg [7:0] din_dly1, din_dly2;
+wire match_det;
+wire [5:0] length;
+wire [11:0] addr_out;
+wire [1:0] code_sel;
+
+cam cam_coder(.clk(clk), .rstN(rstN), .ldN(ldN), .din(din), .match_det(match_det),
+              .addr_out(addr_out));
+
+cntrl_coder cntrl_coder(.clk(clk), .rstN(rstN), .file_in(file_in), .ldN(ldN),
+                        .coder_busy(coder_busy), .match_det(match_det),
+                        .byte_cnt(length), .code_sel(code_sel),
+                        .file_code(file_code), .ldN_code(ldN_code),
+                        .decoder_busy(decoder_busy));
+
+always @(posedge clk)
+  if (!ldN) begin
+    din_dly1 <= din;
+    din_dly2 <= din_dly1;
+  end
+
+assign code = code_sel[1] ?
+             (code_sel[0] ? addr_out[8:0] : {1'b1, addr_out[11:9], length[4:0]})
+           : (code_sel[0] ? {1'b0, din_dly1} : {1'b0, din_dly2});
+
+endmodule
