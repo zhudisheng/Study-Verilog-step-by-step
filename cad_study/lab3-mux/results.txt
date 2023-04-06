@@ -1,0 +1,3 @@
+irun multiplexor.v multiplexor_test.v >> /dev/null 2>&1
+xrun multiplexor.v multiplexor_test.v >> /dev/null 2>&1
+grep TEST.PASSED irun.log >> /dev/null 2>&1
