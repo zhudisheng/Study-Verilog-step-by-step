@@ -1,0 +1,46 @@
+xrun(64): 20.09-s009: (c) Copyright 1995-2021 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	20.09-s009: Started on Apr 07, 2023 at 18:21:10 CST
+xrun
+	controller.v
+	controller_test.v
+file: controller.v
+	module worklib.controller:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		controller_test
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.controller:v <0x7b595d72>
+			streams:   1, words:  6849
+		worklib.controller_test:v <0x7d5a3155>
+			streams:   5, words: 54584
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           18      18
+		Scalar wires:        10       -
+		Vectored wires:       2       -
+		Always blocks:        1       1
+		Initial blocks:       1       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.controller_test:v
+Loading snapshot worklib.controller_test:v .................... Done
+xcelium> source /home/opt/Cadence/XCELIUM2009/tools/xcelium/files/xmsimrc
+xcelium> run
+Testing opcode HLT phase 0 1 2 3 4 5 6 7
+Testing opcode SKZ phase 0 1 2 3 4 5 6 7
+Testing opcode ADD phase 0 1 2 3 4 5 6 7
+Testing opcode AND phase 0 1 2 3 4 5 6 7
+Testing opcode XOR phase 0 1 2 3 4 5 6 7
+Testing opcode LDA phase 0 1 2 3 4 5 6 7
+Testing opcode STO phase 0 1 2 3 4 5 6 7
+Testing opcode JMP phase 0 1 2 3 4 5 6 7
+TEST PASSED
+Simulation complete via $finish(1) at time 65 NS + 0
+./controller_test.v:142     $finish;
+xcelium> exit
+TOOL:	xrun(64)	20.09-s009: Exiting on Apr 07, 2023 at 18:21:12 CST  (total: 00:00:02)
